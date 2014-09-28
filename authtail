@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo zgrep -E '^.*\s+sshd\[.*(Failed)|(Invalid)' $(ls /var/log/auth.log* | sort -r) | tail -n 10
+sudo zgrep -h -E '^.*\s+sshd\[.*(Failed)|(Invalid)' $(ls /var/log/auth.log* | sort -r) | grep -v 'sudo' | tail -n 10
