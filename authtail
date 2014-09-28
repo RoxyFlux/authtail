@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo zcat $(ls /var/log/auth.log* | sort -r) | \
+egrep '^.*[[:space:]]+sshd\[.*(Failed)|(Invalid)' | \
+tail -n 10
