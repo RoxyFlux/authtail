@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo zgrep -h -E '^.*\s+sshd\[.*(Failed)|(Invalid)' \
+zgrep -h -E '^.*\s+sshd\[.*(Failed)|(Invalid)' \
 	$(ls /var/log/auth.log* | sort -r) | \
 grep -v 'sudo' | \
 tail -n 10
